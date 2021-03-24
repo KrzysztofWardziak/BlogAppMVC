@@ -19,7 +19,8 @@
     <Import Project="$(NuGetPackageRoot)microsoft.entityframeworkcore.design\5.0.4\build\netcoreapp3.0\Microsoft.EntityFrameworkCore.Design.props" Condition="Exists('$(NuGetPackageRoot)microsoft.entityframeworkcore.design\5.0.4\build\netcoreapp3.0\Microsoft.EntityFrameworkCore.Design.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">C:\Users\krisw\.nuget\packages\newtonsoft.json\10.0.1</PkgNewtonsoft_Json>
-    <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">C:\Users\krisw\.nuget\packages\microsoft.codeanalysis.analyzers\2.9.3</PkgMicrosoft_CodeAnalysis_Analyzers>
+    <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">C:\Users\krisw\.nuget\packages\microsoft.codeanalysis.analyzers\2.9.4</PkgMicrosoft_CodeAnalysis_Analyzers>
+    <PkgjQuery Condition=" '$(PkgjQuery)' == '' ">C:\Users\krisw\.nuget\packages\jquery\1.6.1</PkgjQuery>
+    <PkgFancybox Condition=" '$(PkgFancybox)' == '' ">C:\Users\krisw\.nuget\packages\fancybox\2.1.5</PkgFancybox>
   </PropertyGroup>
 </Project>

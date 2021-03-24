@@ -16,5 +16,13 @@ namespace BlogAppMVC.Domain.Model
         public List<IFormFile> Image { get; set; }
         public string CreatedDate { get; set; }
         public string ModifiedDate { get; set; }
+        public int CategoryId { get; set; }
+
+
+        [ForeignKey("CategoryId")]
+        public virtual Category Category { get; set; }
+
+        public IEnumerable<Photo> GalleryImages { get; set; }
+        //public IEnumerable<Category> Categories { get; set; }
     }
 }

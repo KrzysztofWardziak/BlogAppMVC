@@ -18,8 +18,15 @@ namespace BlogAppMVC.Infrastructure
 
         public Context(DbContextOptions options) : base(options)
         {
-            
+
         }
 
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+            builder.Entity<BlogDetail>().HasKey(bd => bd.Id);
+        }
     }
 }

@@ -1,0 +1,111 @@
+﻿@model BlogAppMVC.Application.ViewModels.Admin.Blog.ListBlogForListVm
+
+@{
+    ViewData["Title"] = "Dodaj nowy wpis";
+}
+
+<h1>Wszystkie wpisy</h1>
+
+<p>
+    <a asp-action="AddBlog">Dodaj nowy wpis</a>
+</p>
+
+
+<form asp-action="AllBlogs" asp-controller="Admin" method="post">
+    <div class="row">
+        <input type="text" asp-for="SearchString" name="searchString" id="searchString" />
+        <input type="submit" value="Wyszukaj" />
+    </div>
+    <div class="row">
+        <table class="table">
+                <thead>
+                <tr>
+                    <th>
+                        Tytuł
+                    </th>
+                    <th>
+                        Tekst
+                    </th>
+                    <th>
+                        Zdjęcie
+                    </th>
+                    <th>
+                        Kategoria
+                    </th>
+                    <th>
+                        Data utworzenia
+                    </th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in Model.Blogs)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Text)
+                        </td>
+                        <td>
+                            <img src="~/Content/img/blog/@item.Id/@item.PhotoPath" asp-append-version="true" width="350" height="250"/>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CategoryName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CreatedDate)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edycja", "EditBlog", new {id = item.Id}) |
+                            @Html.ActionLink("Details", "BlogDetails", "Blog", new { id=item.Id }) |
+                            @Html.ActionLink("Usuń", "DeleteBlog", new {id = item.Id}, new {@class = "delete"})
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+    </div>
+    <div class="row">
+        <table>
+            <tr>
+                @for (int i = 1; i < Math.Ceiling(Model.Count / (double)Model.PageSize); i++)
+                {
+                    <td>
+
+                        @if (i != Model.CurrentPage)
+                        {
+                            <a href="javascript:PagerClick(@i)">@i</a>
+                        }
+                        else
+                        {
+                            <span>@i</span>
+                        }
+                    </td>
+                }
+            </tr>
+        </table>
+        <input type="hidden" name="pageNo" id="pageNo" />
+        <input type="hidden" name="pageSize" id="pageSize" value="2" />
+    </div>
+</form>
+
+@section Scripts
+{
+    <script type="text/javascript">
+        function PagerClick(index) {
+            document.getElementById("pageNo").value = index;
+            document.forms[0].submit();
+        }
+
+
+        // usuwanie bloga
+        $("body").on("click",
+            "a.delete",
+            function () {
+                if (!confirm("Potwierdż usunięcie bloga")) return false;
+            });
+
+    </script>
+}

@@ -30,7 +30,11 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\krisw\\source\\repos\\BlogAppMVC\\BlogAppMVC.DOmain\\BlogAppMVC.Domain.csproj": {
+                "projectPath": "C:\\Users\\krisw\\source\\repos\\BlogAppMVC\\BlogAppMVC.DOmain\\BlogAppMVC.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -41,6 +45,24 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            },
+            "Microsoft.AspNetCore.Mvc.ViewFeatures": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -168,6 +190,10 @@
               "target": "Package",
               "version": "[5.0.4, )"
             },
+            "Microsoft.AspNetCore.Mvc.ViewFeatures": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.4, )"
@@ -247,6 +273,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Fancybox": {
+              "target": "Package",
+              "version": "[2.1.5, )"
+            },
             "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
               "target": "Package",
               "version": "[3.1.8, )"
@@ -256,6 +286,18 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.4, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
+            "SixLabors.ImageSharp": {
+              "target": "Package",
+              "version": "[1.0.3, )"
+            },
+            "dropzone": {
+              "target": "Package",
+              "version": "[4.3.0, )"
             }
           },
           "imports": [

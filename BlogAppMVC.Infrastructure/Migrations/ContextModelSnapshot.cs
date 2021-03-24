@@ -26,6 +26,9 @@ namespace BlogAppMVC.Infrastructure.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
                     b.Property<string>("CreatedDate")
                         .HasColumnType("nvarchar(max)");
 
@@ -43,6 +46,8 @@ namespace BlogAppMVC.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CategoryId");
+
                     b.ToTable("BlogDetails");
                 });
 
@@ -53,6 +58,9 @@ namespace BlogAppMVC.Infrastructure.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("BlogDetailId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
@@ -60,6 +68,8 @@ namespace BlogAppMVC.Infrastructure.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("BlogDetailId");
 
                     b.ToTable("Categories");
                 });
@@ -149,6 +159,9 @@ namespace BlogAppMVC.Infrastructure.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("BlogDetailId")
+                        .HasColumnType("int");
+
                     b.Property<int>("BlogId")
                         .HasColumnType("int");
 
@@ -183,6 +196,8 @@ namespace BlogAppMVC.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("BlogDetailId");
 
                     b.ToTable("Photos");
                 });
@@ -383,6 +398,31 @@ namespace BlogAppMVC.Infrastructure.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("BlogAppMVC.Domain.Model.BlogDetail", b =>
+                {
+                    b.HasOne("BlogAppMVC.Domain.Model.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("BlogAppMVC.Domain.Model.Category", b =>
+                {
+                    b.HasOne("BlogAppMVC.Domain.Model.BlogDetail", null)
+                        .WithMany("Categories")
+                        .HasForeignKey("BlogDetailId");
+                });
+
+            modelBuilder.Entity("BlogAppMVC.Domain.Model.Photo", b =>
+                {
+                    b.HasOne("BlogAppMVC.Domain.Model.BlogDetail", null)
+                        .WithMany("GalleryImages")
+                        .HasForeignKey("BlogDetailId");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -432,6 +472,13 @@ namespace BlogAppMVC.Infrastructure.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("BlogAppMVC.Domain.Model.BlogDetail", b =>
+                {
+                    b.Navigation("Categories");
+
+                    b.Navigation("GalleryImages");
                 });
 #pragma warning restore 612, 618
         }
