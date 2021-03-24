@@ -2,10 +2,10 @@
 @model BlogAppMVC.Application.ViewModels.Admin.Blog.BlogDetailVm
 
 @{
-    ViewData["Title"] = "Blog szczzegóły";
+    ViewData["Title"] = "Blog szczegóły";
 }
 
-<h1>Blog szczzegóły</h1>
+<h1>Blog szczegóły</h1>
 
 @*<div>
         <hr />
@@ -28,7 +28,7 @@
 
 <div class="row">
     <div class="col-xs-12 col-md-4">
-        <img src="Content/img/blog/@Model.Id/@Model.PhotoPath" />
+        <img src="/Content/img/blog/@Model.Id/@Model.PhotoPath" />
     </div>
     <div class="col-xs-12 col-md-8">
         @Html.DisplayFor(model => model.Title)
@@ -43,7 +43,7 @@
 <h3>Zdjęcia</h3>
 
 
-<div class="col-xs-12 fancyboxdiv">
+<div class="col-xs-12 fancyboxdiv" id="lightgallery">
     <br /><br />
 
     @if (Model.GalleryImages.Count() < 1)
@@ -57,31 +57,25 @@
 
             <div style="display: inline-block">
                 <a class="fancybox" rel="gallery1" href="/Content/img/blog/@Model.Id/Gallery/@image">
-                    <img src="/Content/img/Blog/@Model.Id/Gallery/Thumbs/@image" />
+                    <img  src="/Content/img/Blog/@Model.Id/Gallery/Thumbs/@image" />
                 </a>
             </div>
         }
     }
 </div>
 
-<link href="~/Fancybox/jquery.fancybox.css" />
-
+<link href="~/Fancybox/jquery.fancybox.css" rel="stylesheet" />
 
 @section Scripts
 {
     <script src="~/Scripts/jquery.fancybox.js"></script>
-    <script>
-        $(function () {
 
-            // FancyBox nuget
+    <script>
+    $(function () {
+        // FancyBox nuget
             $(".fancybox").fancybox();
             ///////////////////////////////////
-
-
-
         });
-
-
     </script>
 
 }
