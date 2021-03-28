@@ -49,8 +49,10 @@ namespace BlogAppMVC.Application.Services
 
         public int AddCategory(NewCategoryVm category)
         {
-            
             var cat = _mapper.Map<Category>(category);
+            Category dto = new Category();
+            dto.Name = category.Name;
+            cat.Slug = category.Name.Replace(" ", "-").ToLower();
             var id = _adminRepository.AddCategory(cat);
             return id;
         }
@@ -63,6 +65,9 @@ namespace BlogAppMVC.Application.Services
         public void EditCategory(NewCategoryVm category)
         {
             var cat = _mapper.Map<Category>(category);
+            Category dto = new Category();
+            dto.Name = category.Name;
+            cat.Slug = category.Name.Replace(" ", "-").ToLower();
             _adminRepository.EditCategory(cat);
         }
 
@@ -79,6 +84,9 @@ namespace BlogAppMVC.Application.Services
             blog.CreatedDate = date;
 
             var bl = _mapper.Map<BlogDetail>(blog);
+            BlogDetail dto = new BlogDetail();
+            dto.Title = blog.Title;
+            bl.Slug = blog.Title.Replace(" ", "-").ToLower();
             _adminRepository.GetBlogById(blog.Id);
             //if (blog.Image != null)
             //    SaveImage(blog);
@@ -134,6 +142,8 @@ namespace BlogAppMVC.Application.Services
             blog.ModifiedDate = date;
             
             var blogVm = _mapper.Map<BlogDetail>(blog);
+            BlogDetail dto = new BlogDetail();
+            blogVm.Slug = blog.Title.Replace(" ", "-").ToLower();
             _adminRepository.EditBlog(blogVm);
         }
 

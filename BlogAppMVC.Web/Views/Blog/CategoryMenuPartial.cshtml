@@ -1,0 +1,21 @@
+﻿@using System.Linq
+@model IEnumerable<BlogAppMVC.Application.ViewModels.Admin.Category.CategoryVm>
+
+<h3>Kategorie</h3>
+
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>
+            <a href="/blog/category/@item.Slug.ToLower()">@item.Name</a>
+        </li>
+    }
+
+</ul>
+
+ @foreach (var item in Model)
+ {
+     <input type="hidden" asp-for="@item.Slug"/>
+ }
+
+

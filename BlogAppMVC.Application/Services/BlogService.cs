@@ -4,6 +4,7 @@ using System.Text;
 using AutoMapper;
 using BlogAppMVC.Application.Interface;
 using BlogAppMVC.Application.ViewModels.Admin.Blog;
+using BlogAppMVC.Application.ViewModels.Admin.Category;
 using BlogAppMVC.Domain.Interface;
 
 namespace BlogAppMVC.Application.Services

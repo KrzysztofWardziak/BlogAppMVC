@@ -15,6 +15,7 @@ namespace BlogAppMVC.Application.ViewModels.Admin.Blog
         public int Id { get; set; }
         public string Title { get; set; }
         public string Text { get; set; }
+        public string Slug { get; set; }
         public string PhotoPath { get; set; }
         [NotMapped]
         public List<IFormFile> Image { get; set; }
@@ -22,6 +23,25 @@ namespace BlogAppMVC.Application.ViewModels.Admin.Blog
         public string ModifiedDate { get; set; }
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
+
+        public BlogDetailVm()
+        {
+            
+        }
+
+        public BlogDetailVm(BlogDetail row)
+        {
+            Id = row.Id;
+            Title = row.Title;
+            Text = row.Text;
+            Slug = row.Slug;
+            PhotoPath = row.PhotoPath;
+            Image = row.Image;
+            CreatedDate = row.CreatedDate;
+            ModifiedDate = row.ModifiedDate;
+            CategoryId = row.CategoryId;
+            
+        }
 
         public IEnumerable<SelectListItem> Categories { get; set; }
         public IEnumerable<string> GalleryImages { get; set; }
@@ -36,6 +56,7 @@ namespace BlogAppMVC.Application.ViewModels.Admin.Blog
                 .ForMember(d => d.PhotoPath, opt => opt.MapFrom(s => s.PhotoPath))
                 .ForMember(d => d.Image, opt => opt.MapFrom(s => s.Image))
                 .ForMember(d => d.CreatedDate, opt => opt.MapFrom(s => s.CreatedDate))
+                .ForMember(d => d.Slug, opt => opt.MapFrom(s => s.Slug))
                 .ForMember(d => d.ModifiedDate, opt => opt.MapFrom(s => s.ModifiedDate))
                 .ForMember(d => d.CategoryId, opt => opt.MapFrom(s => s.CategoryId));
             //.ForMember(d => d.Categories, opt => opt.MapFrom(s => s.Categories));

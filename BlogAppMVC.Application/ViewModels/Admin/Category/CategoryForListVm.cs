@@ -10,6 +10,8 @@ namespace BlogAppMVC.Application.ViewModels.Admin.Category
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Slug { get; set; }
+
         public int Sorting { get; set; }
 
         public void Mapping(Profile profile)
@@ -17,6 +19,7 @@ namespace BlogAppMVC.Application.ViewModels.Admin.Category
             profile.CreateMap<Domain.Model.Category, CategoryForListVm>()
                 .ForMember(d => d.Id, opt => opt.MapFrom(s => s.Id))
                 .ForMember(d => d.Name, opt => opt.MapFrom(s => s.Name))
+                .ForMember(d => d.Slug, opt => opt.MapFrom(s => s.Slug))
                 .ForMember(d => d.Sorting, opt => opt.MapFrom(s => s.Sorting));
         }
     }

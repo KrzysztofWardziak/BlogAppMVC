@@ -34,6 +34,9 @@
                         @Html.ValidationMessageFor(model => model.Text, "", new { @class = "text-danger" })
                     </div>
                 </div>
+                <div class="form-group">
+                    <input type="hidden" asp-for="Slug" class="form-control" />
+                </div>
 
                 @*<div class="form-group col-md-4">
                         <label asp-for="Image" class="control-label">Zdjęcie</label>

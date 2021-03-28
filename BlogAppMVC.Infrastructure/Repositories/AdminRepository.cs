@@ -56,6 +56,7 @@ namespace BlogAppMVC.Infrastructure.Repositories
             {
                 _context.Attach(category);
                 _context.Entry(category).Property("Name").IsModified = true;
+                _context.Entry(category).Property("Slug").IsModified = true;
                 _context.Entry(category).Property("Sorting").IsModified = true;
                 _context.SaveChanges();
             }
@@ -102,6 +103,7 @@ namespace BlogAppMVC.Infrastructure.Repositories
                 _context.Attach(blog);
                 _context.Entry(blog).Property("Title").IsModified = true;
                 _context.Entry(blog).Property("Text").IsModified = true;
+                _context.Entry(blog).Property("Slug").IsModified = true;
                 _context.Entry(blog).Property("CategoryId").IsModified = true;
                 _context.Entry(blog).Property("ModifiedDate").IsModified = true;
                 _context.Entry(blog).Property("PhotoPath").IsModified = true;

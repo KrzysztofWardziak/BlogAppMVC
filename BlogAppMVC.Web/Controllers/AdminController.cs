@@ -64,6 +64,7 @@ namespace BlogAppMVC.Web.Controllers
         {
             if (ModelState.IsValid)
             {
+               // model.Slug = model.Name.Replace("", "-").ToLower();
                 model.Sorting = 1000;
                 var id = _adminService.AddCategory(model);
                 return RedirectToAction("Categories");

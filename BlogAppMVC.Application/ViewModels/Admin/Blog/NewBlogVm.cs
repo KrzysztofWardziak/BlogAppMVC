@@ -16,6 +16,7 @@ namespace BlogAppMVC.Application.ViewModels.Admin.Blog
         public int Id { get; set; }
         public string Title { get; set; }
         public string Text { get; set; }
+        public string Slug { get; set; }
         public string PhotoPath { get; set; }
         [NotMapped]
         public List<IFormFile> Image { get; set; }

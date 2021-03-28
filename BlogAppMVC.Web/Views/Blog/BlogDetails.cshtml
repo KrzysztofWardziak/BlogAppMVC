@@ -5,32 +5,14 @@
     ViewData["Title"] = "Blog szczegóły";
 }
 
-<h1>Blog szczegóły</h1>
+<h1>@Model.Title</h1>
 
-@*<div>
-        <hr />
-        <dl class="row">
-            <dd class = "col-sm-10">
-                @Html.DisplayFor(model => model.Title)
-            </dd>
-            <div class="col-xs-12 col-md-4">
-                <img src="Content/img/blog/@Model.Id/@Model.PhotoPath"/>
-            </div>
-
-            <dd class = "col-sm-10">
-                @Html.DisplayFor(model => model.Text)
-            </dd>
-            <dd class = "col-sm-10">
-                @Html.DisplayFor(model => model.CreatedDate)
-            </dd>
-        </dl>
-    </div>*@
 
 <div class="row">
-    <div class="col-xs-12 col-md-4">
+    <div class="col-md-8 col-xs-4" >
         <img src="/Content/img/blog/@Model.Id/@Model.PhotoPath" />
     </div>
-    <div class="col-xs-12 col-md-8">
+    <div class="col-md-4" style="padding: 20px">
         @Html.DisplayFor(model => model.Title)
         <br />
         @Html.DisplayFor(model => model.Text)

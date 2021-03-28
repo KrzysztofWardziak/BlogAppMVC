@@ -14,6 +14,7 @@ namespace BlogAppMVC.Application.ViewModels.Admin.Blog
         public int Id { get; set; }
         public string Title { get; set; }
         public string Text { get; set; }
+        public string Slug { get; set; }
         public string PhotoPath { get; set; }
         [NotMapped]
         public List<IFormFile> Image { get; set; }
@@ -31,6 +32,7 @@ namespace BlogAppMVC.Application.ViewModels.Admin.Blog
                 .ForMember(d => d.Text, opt => opt.MapFrom(s => s.Text))
                 .ForMember(d => d.PhotoPath, opt => opt.MapFrom(s => s.PhotoPath))
                 .ForMember(d => d.Image, opt => opt.MapFrom(s => s.Image))
+                .ForMember(d => d.Slug, opt => opt.MapFrom(s => s.Slug))
                 .ForMember(d => d.CreatedDate, opt => opt.MapFrom(s => s.CreatedDate))
                 .ForMember(d => d.ModifiedDate, opt => opt.MapFrom(s => s.ModifiedDate))
                 .ForMember(d => d.CategoryId, opt => opt.MapFrom(s => s.CategoryId));

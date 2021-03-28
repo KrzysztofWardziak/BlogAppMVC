@@ -7,5 +7,16 @@ input#ImageName {
      display: none
  }
 
-
+.foo-view {
+    text-align: left;
+    position: relative;
+    left: -170px;
+    top: auto;
+/*    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;*/
+}
 
