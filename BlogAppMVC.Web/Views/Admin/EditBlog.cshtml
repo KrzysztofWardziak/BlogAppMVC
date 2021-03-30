@@ -38,28 +38,22 @@
                     <input type="hidden" asp-for="Slug" class="form-control" />
                 </div>
 
-                @*<div class="form-group col-md-4">
-                        <label asp-for="Image" class="control-label">Zdjęcie</label>
-                        <input type="file" asp-for="Image" class="form-control" id="ImageUpload" />
-                        <span asp-validation-for="Image" class="text-danger"></span>
-                        <img id="imgpreview" src="#" />
-                    </div>*@
-
                 <div class="form-group">
                     <label class="control-label col-md-2">Zdjęcie</label>
                     <inp />
                     @Html.EditorFor(model => model.PhotoPath, new { htmlAttributes = new { @type = "hidden", @class = "form-control" } })
                     <div class="col-md-10">
-                        <img src="Content/img/blog/@Model.Id/@Model.PhotoPath" />
+                        <img src="~/Content/img/blog/@Model.Id/@Model.PhotoPath" />
                         <br /><br />
-                        <img id="imgpreview" src="#" />
                         <br /><br />
                         <div class="col-md-10">
-                            <input type="file" asp-for="Image" name="file" class="form-control" id="ImageUpload" />
+                            @*<input type="file" asp-for="Image" name="file" class="form-control" id="ImageUpload"/>*@
+                            @Html.EditorFor(model => model.Image, new { htmlAttributes = new {@class = "form-control", @name = "file", @id="ImageUpload"}})
+                            <br /><img id="imgpreview" src="#" alt="podgląd"/>
                         </div>
                     </div>
                 </div>
-
+                <br />
                 <div class="form-group col-md-4">
                     <label class="control-label col-md-2">Kategoria</label>
                     <div>

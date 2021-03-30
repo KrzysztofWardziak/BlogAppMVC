@@ -1,24 +1,20 @@
 ﻿@model BlogAppMVC.Application.ViewModels.Admin.Blog.ListBlogForListVm
 
 @{
-    ViewData["Title"] = "Dodaj nowy wpis";
+    ViewData["Title"] = "Wszystkie wpisy";
 }
 
 <h1>Wszystkie wpisy</h1>
 
-<p>
+@*<p>
     <a asp-action="AddBlog">Dodaj nowy wpis</a>
-</p>
+</p>*@
 
 
 <form asp-action="AllBlogs" asp-controller="Admin" method="post">
     <div class="row">
         <input type="text" asp-for="SearchString" name="searchString" id="searchString" />
         <input type="submit" value="Wyszukaj" />
-    </div>
-    <div class="page row col-md-2 foo-view col-xs-12">
-        <div id="foo-view" data-url="@Url.Action(action: "CategoryMenuPartial", controller: "Blog")">
-        </div>
     </div>
     <div class="row">
 
@@ -64,8 +60,7 @@
                         </td>
                         <td>
                             @Html.ActionLink("Edycja", "EditBlog", new { id = item.Id }) |
-                            @Html.ActionLink("Kategorie", "CategoryMenuPartial", "Blog", new { name = item.Slug })
-                            @Html.ActionLink("Details", "BlogDetails", "Blog", new { id = item.Id }) |
+                            @Html.ActionLink("Szczegóły", "BlogDetails", "Blog", new { id = item.Id }) |
                             @Html.ActionLink("Usuń", "DeleteBlog", new { id = item.Id }, new { @class = "delete" })
                         </td>
                     </tr>
@@ -93,7 +88,7 @@
             </tr>
         </table>
         <input type="hidden" name="pageNo" id="pageNo" />
-        <input type="hidden" name="pageSize" id="pageSize" value="2" />
+        <input type="hidden" name="pageSize" id="pageSize" value="5" />
     </div>
 </form>
 
@@ -106,12 +101,6 @@
             document.forms[0].submit();
         }
 
-        $(document).ready(function () {
-            (function () {
-                var url = $("#foo-view").data("url");
-                $("#foo-view").load(url);
-            })();
-        });
 
         // usuwanie bloga
         $("body").on("click",
