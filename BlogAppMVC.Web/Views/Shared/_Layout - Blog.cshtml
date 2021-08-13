@@ -1,0 +1,302 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BlogAppMVC.Web</title>
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/css/Categories.css" />
+        <link href="~/dropzone/basic.css" rel="stylesheet" />
+        <link href="~/dropzone/dropzone.css" rel="stylesheet" />
+        <link href="~/css/menu.css" rel="stylesheet" />*@
+    @*<link href="~/css/editor-style.css" rel="stylesheet" />*@
+    <link href="~/css/responsive.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/css/animate.css" rel="stylesheet" />
+    <link href="~/css/jquery.fancybox.css" rel="stylesheet" />
+</head>
+<body class="home page-template page-template-page-templates page-template-photograph-template page-template-page-templatesphotograph-template-php page page-id-6 wp-custom-logo wp-embed-responsive  photograph-corporate vid-thumb">
+    <div id="page" class="site">
+        <a class="skip-link screen-reader-text" href="#site-content-contain">Skip to content</a>
+        <header id="masthead" class="site-header clearfix" role="banner">
+            <div class="header-wrap">
+                <div class="top-header">
+                    <div id="sticky-header-sticky-wrapper" class="sticky-wrapper">
+                        <div id="sticky-header" class="clearfix">
+                            <div class="main-header clearfix">
+                                <div id="site-branding">
+                                    <a href="https://demo.themefreesia.com/photograph/" class="custom-logo-link" rel="home" aria-current="page">
+                                        <img width="340" height="180" src="/Content/img/julia.jpg" class="custom-logo" alt="Photograph" />
+                                    </a>
+                                    <div id="site-detail">
+                                        <h1 id="site-title">
+                                        </h1>
+                                    </div>
+                                </div>
+                                <nav class="main-navigation clearfix" id="site-navigation" role="navigation" aria-label="Main Menu">
+                                    <button type="button" class="menu-toggle" aria-controls="primary-menu" aria-expanded="False">
+                                        <span class="line-bar"></span>
+                                    </button>
+                                    <ul class="menu nav-menu" id="primary-menu" aria-expanded="False">
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-6 current_page_item menu-item-35" id="menu-item">
+                                            <a asp-area="" asp-controller="Admin" asp-action="AllBlogs">Home</a>
+                                        </li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-129" id="menu-item-129">
+                                            <a asp-area="" asp-controller="Blog" asp-action="Index">O mnie</a>
+                                        </li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-149" id="menu-item-149">
+                                            <a asp-area="" asp-controller="Admin" asp-action="AllBlogs">Blog</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a asp-area="" asp-controller="Admin" asp-action="Categories">Galerie zdjęć</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a asp-area="" asp-controller="Calendar" asp-action="">Kontakt</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <div class="right-toggle">
+                                    <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="False">
+                                        <span class="line-bar"></span>
+                                    </button>
+                                    <button type="button" id="search-toggle" class="header-search"></button>
+                                    <button type="button" class="show-menu-toggle">
+                                        <span class="sn-text">Menu Button</span>
+                                        <span class="bars">
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="search-box" class="clearfix">
+                    <button type="button" class="search-x"></button>
+                    <form class="search-form" action="https://demo.themefreesia.com/photograph/">
+                        <label class="screen-reader-text">Search</label>
+                        <input type="search" name="s" class="search-field" placeholder="search" autocomplete="off" />
+                        <button type="submit" class="search-submit">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+                <aside class="side-menu-wrap" role="complementary">
+                    <div class="side-menu">
+                        <button type="button" class="hide-menu-toggle">
+                            <span class="screen-reader-text">Close Side menu</span>
+                            <span class="bars"></span>
+                        </button>
+                        <div id="site-branding">
+                            <a href="https://demo.themefreesia.com/photograph/" class="custom-logo-link" rel="home" aria-current="page">
+                                <img width="340" height="180" src="https://demo.themefreesia.com/photograph/wp-content/uploads/sites/35/2018/04/np-logo.png" />
+                            </a>
+                        </div>
+                        <nav class="side-nav-wrap" role="navigation" aria-label="Sidebar Menu">
+                            <ul class="side-menu-list">
+                                <li id="menu-item-145" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-6 current_page_item menu-item-145">
+                                    <a asp-area="" asp-controller="Admin" asp-action="AllBlogs" aria-current="page">Home</a>
+                                </li>
+                                <li id="menu-item-142" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-142">
+                                    <a asp-area="" asp-controller="Admin" asp-action="AllBlogs" aria-current="page">Blog</a>
+                                </li>
+                                <li id="menu-item-144" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-144">
+                                    <a asp-area="" asp-controller="Contact" asp-action="AboutUs" aria-current="page">About us</a>
+                                </li>
+                                <li id="menu-item-148" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-148">
+                                    <a href="https://demo.themefreesia.com/photograph/Gallery/" aria-current="page">Gallery</a>
+                                </li>
+                                <li id="menu-item-143" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-143">
+                                    <a href="https://demo.themefreesia.com/photograph/contact/" aria-current="page">Contact</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="social-links clearfix">
+                            <ul>
+                                <li id="menu-item-130" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-130">
+                                    <a href="https://www.facebook.com/">
+                                        <span class="screen-reader-text">facebook</span>
+                                    </a>
+                                </li>
+                                <li id="menu-item-131" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-131">
+                                    <a href="https://www.twitter.com/">
+                                        <span class="screen-reader-text">Twitter</span>
+                                    </a>
+                                </li>
+                                <li id="menu-item-132" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-132">
+                                    <a href="https://www.Instagram.com/">
+                                        <span class="screen-reader-text">Instagram</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="side-widget-tray">
+                            <section id="media-gallery-2" class="widget widget_gallery">
+                                <h3 class="widget-title">
+                                    Gallery
+                                </h3>
+                                <div id="gallery-1" class="gallery galleryid-6 gallery-columns-3 gallery-size-thumbnail">
+                                    <figure class="gallery-item">
+                                        <div class="gallery-icon landscape">
+                                            <a href="https://demo.themefreesia.com/photograph/featured-image-18/"></a>
+                                        </div>
+                                    </figure>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+            <div class="header-social-block">
+                <div class="social-links clearfix">
+                    <ul>
+                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-130">
+                            <a href="https://www.facebook.com/" style="background-color:cornflowerblue">
+                                <span class="screen-reader-text" >Facebook</span>
+                            </a>
+                        </li>
+                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-131">
+                            <a href="https://www.twitter.com/" style="background-color:cornflowerblue">
+                                <span class="screen-reader-text">twitter</span>
+                            </a>
+                        </li>
+                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-132">
+                            <a href="https://www.instagram.com/" style="background-color:cornflowerblue">
+                                <span class="screen-reader-text">Instagram</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="vid-thumb-tray clearfix">
+                @*<div class="vid-thumb-bg jarallax" title="Photo" style="background-image: url('https://demo.themefreesia.com/photograph/wp-content/uploads/sites/35/2018/04/photograph-bg.jpg');">  *@
+                <div class="vid-thumb-bg jarallax" title="Photo" style="background-image: url('/Content/img/julia.jpg'); max-width: auto; max-height: auto; background-size: contain; background-repeat: no-repeat" >
+                    <div class="vid-thumb-content">
+                        <div class="vid-thumb-text">
+                            <h2 class="vid-thumb-title">
+                                <a href="https://demo.themefreesia.com/photograph/2018/04/26/mansory-fullscreen-gallery-and-portfolio-templates/"></a>
+                            </h2>
+                            <span class="vid-thumb-text-area">
+                            </span>
+                        </div>
+                    </div>
+                    <div id="jarallax-container-0" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none; z-index: -100;">
+                        <div style="background-position: 50% 50%; background-size: cover; background-repeat: no-repeat; background-image: url(" https: //demo.themefreesia.com/photograph/wp-content/uploads/sites/35/2018/04/photograph-bg.jpg"); position: fixed; top: 0px; left: 0px; width: 1266px; height: 937px; overflow: hidden; pointer-events: none; margin-top: 0px; transform: translate3d(0px, -50px, 0px);"></div>
+                    </div>
+                </div>
+
+                <button type="button" class="scroll-down">
+                    <span>menu</span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
+
+        @*
+            ////////////////////////////////
+        *@
+        <div class="site-content-contain" id="site-content-contain">
+            <div id="content" class="site-content">
+                <main id="main" class="site-main" role="main">
+                    <div class="featured-gallery-wrap show-fgt-hover">
+                        <div class="featured-gallery-content clearfix">
+                            <div class="featured-gallery-header">
+                                <h2 class="featured-gallery-title freesia-animation fadeInDown" style="visibility: visible; animation-name: fadeInDown;">
+                                    GALERIA KREATYWNA
+                                </h2>
+                                <div class="filters filter-button freesia-animation fadeInDown" style="visibility: visible; animation-name: fadeInDown;">
+                                    <div>
+                                        <button type="button" class="active" data-category="*">Wszystkie</button>
+                                        <button type="button" data-category=".tag-fashion">Moda</button>
+                                        <button type="button" data-category=".tag-lifestyle">Styl życia</button>
+                                        <button type="button" data-category=".tag-nature">Natura</button>
+                                        <button type="button" data-category=".tag-portraits">Portrety</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="featured-gallery gallery-col-4" style="position: absolute;">
+                                <article class="featured-item post-111 post type-post status-publish format-image has-post-thumbnail hentry category-gallery tag-fashion tag-people tag-portraits post_format-post-format-image" style="position: absolute; left: 0px; top: 0px;">
+                                    <div class="post-gallery-wrap freesia-animation fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                                        <div class="featured-image-content">
+                                            <a class="popup-image" data-fancybox="post-gallery" data-title="Gallery" href="https://demo.themefreesia.com/photograph/wp-content/uploads/sites/35/2018/04/featured-image-1.jpg">
+                                                <img width="800" height="1200" src="https://demo.themefreesia.com/photograph/wp-content/uploads/sites/35/2018/04/featured-image-1.jpg" alt loading="lazy" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" />
+                                            </a>
+                                        </div>
+                                        <div class="featured-text-content">
+                                            <h3 class="featured-title">
+                                                <a title="Gallery" href="https://demo.themefreesia.com/photograph/2018/04/26/cool-gallery-and-portfolio-templates/">Gallery</a>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="featured-item post-109 post type-post status-publish format-image has-post-thumbnail hentry category-gallery tag-nature tag-people tag-portraits post_format-post-format-image" style="position: absolute;">
+                                    <div class="post-gallery-wrap freesia-animation fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                                        <div class="featured-image-content">
+                                            <a class="popup-image" data-fancybox="post-gallery" data-title="Gallery" href="https://demo.themefreesia.com/photograph/wp-content/uploads/sites/35/2018/04/featured-image-2.jpg">
+                                                <img width="1600" height="1188" src="https://demo.themefreesia.com/photograph/wp-content/uploads/sites/35/2018/04/featured-image-2.jpg" alt loading="lazy" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" />
+                                            </a>
+                                        </div>
+                                        <div class="featured-text-content">
+                                            <h3 class="featured-title">
+                                                <a title="Gallery" href="https://demo.themefreesia.com/photograph/2018/04/26/cool-gallery-and-portfolio-templates/">Gallery</a>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="featured-item post-110 post type-post status-publish format-image has-post-thumbnail hentry category-gallery tag-lifestyle post_format-post-format-image" style="position: absolute;">
+                                    <div class="post-gallery-wrap freesia-animation fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                                        <div class="featured-image-content">
+                                            <a class="popup-image" data-fancybox="post-gallery" data-title="Gallery" href="/Content/img/DSC_1003.jpg">
+                                                <img width="1600" height="1067" src="/Content/img/DSC_1003.jpg" alt loading="lazy" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" />
+                                            </a>
+                                        </div>
+                                        <div class="featured-text-content">
+                                            <h3 class="featured-title">
+                                                <a title="Gallery" href="/Content/img/DSC_1003.jpg">Gallery</a>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+
+
+                @*<div class="container">
+                        <div class="row">
+                            <main role="main" class="pb-3">
+                                @RenderBody()
+                            </main>
+                        </div>
+                    </div>*@
+            </div>
+            <footer id="colophon" class="site-footer" role="contentinfo">
+                <div class="container">
+                    &copy; 2021 - BlogAppMVC.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/Scripts/js/navigation.js"></script>
+    <script src="~/Scripts/js/photograph-main.js"></script>
+    <script src="~/Scripts/sticky/jquery.sticky.min.js"></script>
+    <script src="~/Scripts/sticky/sticky-settings.js"></script>
+    <script src="~/Scripts/js/fancybox/fancybox-settings.js"></script>
+    <script src="~/Scripts/js/fancybox/jquery.fancybox.js"></script>
+    <script src="~/Scripts/js/isotope-setting.js"></script>
+    <script src="~/Scripts/js/source/flexslider-setting.js"></script>
+    <script src="~/Scripts/js/source/html5.js"></script>
+    <script src="~/Scripts/js/source/imagesloaded.pkgd.js"></script>
+    <script src="~/Scripts/js/source/isotope.pkgd.js"></script>
+    <script src="~/Scripts/js/source/jquery.flexslider.js"></script>
+    <script src="~/Scripts/js/source/skip-link-focus-fix.js"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
